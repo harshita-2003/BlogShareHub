@@ -1,0 +1,19 @@
+<%- include('partials/header.ejs') %>
+
+<h1>COMPOSE</h1>
+<form action="/publish" method="post" style="display: block;">
+
+    <label>Image Link<span class="text-danger">*</span></label>
+    <input type="text" name="image" placeholder="Paste related image link" required>
+
+    <label for="text">Title<span class="text-danger">*</span></label>
+    <input type="text" name="text" required>
+
+    <label for="post">Post<span class="text-danger">*</span></label>
+    <textarea name="content" cols="30" rows="10" required></textarea>
+
+    <button type="submit" name="publish" class="btn btn-info btn-md"> Publish </button>
+
+</form>
+
+<%- include('partials/footer.ejs') %>

@@ -1,0 +1,59 @@
+<%- include('partials/header.ejs') %>
+
+    <style>
+        .navbar{
+            position:fixed;
+            z-index: 10;
+            top: 0;
+            width: 100%;
+        }
+    </style>
+
+    <div class="hero-wrap js-fullheight" style="background-image: url('images/bg_1.jpg.webp'); height: 96vh;width:85vw; background-position: 50% -17px;" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true" style="height: 725px;">
+                <div class="col-md-12 ftco">
+                    <h2 class="subheading">Hello! Welcome to</h2>
+                    <h1 class="mb-4 mb-md-0">BlogShare Hub</h1>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="text">
+                                <p>"Welcome to our vibrant community of passionate writers and thought-sharers. Explore a diverse tapestry of ideas, stories, and insights used by individuals from around the world. Unleash your creativity and contribute your own unique perspective to our dynamic platform."</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/compose"><button class="btn btn-info btn-lg">Create BLog</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <h2 class="my-3 text-center">My Blogs</h2>
+
+
+<% posts.forEach(element => { %>
+
+    <form action="/delete" method="post">
+        <div class="section my-2">
+            <div>
+                <img src="<%= element.link %>" class="blog_img">
+            </div>
+            <div class="mt-4 p-3">
+                <h3 class="fs-1 "><strong> <%= element.title %> </strong></h3>
+                <p class="mb-0"> <%= element.content.substring(0,150) + "..."%> </p>
+                <a href="/posts/<%=element.title%>" class="read-more"> <button type="button" class="read">Read More</button> </a>
+                <a href="" class="read-more" > <button type="submit" name="delpost" class="delete" value="<%= element._id%>">Delete</button> </a>
+
+            </div>
+            
+        </div>
+    </form>
+    <hr class="ruler">
+
+<% }) %>
+
+<%- include('partials/footer.ejs') %>
