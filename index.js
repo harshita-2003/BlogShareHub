@@ -11,8 +11,7 @@ let posts = [];
 
 // mongoose.connect("mongodb://127.0.0.1:27017/blog" , {useNewUrlParser: true,
 // useUnifiedTopology: true,})
-const connection = mongoose.connect(process.env.MONGODB_URL , {
-useUnifiedTopology: true,})
+const connection = mongoose.connect(process.env.MONGODB_URL )
 
 const db = mongoose.connection
 db.once('open',()=>{
