@@ -22,6 +22,7 @@ const blogschema = new mongoose.Schema({
     title : String,
     content : String
 })
+
 const Blog = mongoose.model('Blog',blogschema)
 // const blog1 = new Blog({
 //     link : 'https://th.bing.com/th/id/OIP.a5YOm_1N-oe-O025Jw4PTQHaE8?pid=ImgDet&rs=1',
